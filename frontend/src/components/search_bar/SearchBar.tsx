@@ -56,6 +56,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         base: '90%',
         sm: '50%',
       }}
+      id='search-bar'
     >
       <HStack gap='4' width='full' position='relative'>
         <InputGroup

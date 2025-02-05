@@ -1,7 +1,9 @@
-import React from 'react';
-import { Grid, Box, Skeleton } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Grid, Box, Skeleton, Button, HStack } from '@chakra-ui/react';
 import HouseCard from '../house_card/HouseCard';
 import EmptyState from '../empty_state/EmptyState';
+import { IoChevronForwardSharp } from 'react-icons/io5';
+import { IoChevronBackSharp } from 'react-icons/io5';
 
 interface House {
   id: number;
@@ -17,6 +19,41 @@ interface HouseGridProps {
 }
 
 const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentHouses = houses.slice(indexOfFirstItem, indexOfLastItem);
+
+  // funções de navegação entre as páginas
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      scrollToHouses();
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      scrollToHouses();
+    }
+  };
+
+  // função para scroll suave até o elemento #houses
+  const scrollToHouses = () => {
+    const element = document.getElementById('search-bar');
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 40,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const totalPages = Math.ceil(houses.length / itemsPerPage);
+
   return (
     <Box
       p={4}
@@ -31,7 +68,7 @@ const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
       alignItems='center'
       justifyContent='center'
     >
-      {!isLoading && houses.length > 0 ? (
+      {!isLoading && currentHouses.length > 0 ? (
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
@@ -44,7 +81,7 @@ const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
           maxW='container.xxl'
           mx='auto'
         >
-          {houses.map((house) => (
+          {currentHouses.map((house) => (
             <HouseCard
               key={house.id}
               id={house.id}
@@ -87,6 +124,17 @@ const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
               <Skeleton key={index} height='400px' borderRadius='xl' />
             ))}
         </Grid>
+      ) : null}
+
+      {!isLoading && houses.length > 0 && totalPages > 1 ? (
+        <HStack mt={'2rem'}>
+          <Button onClick={prevPage} disabled={currentPage === 1}>
+            <IoChevronBackSharp />
+          </Button>
+          <Button onClick={nextPage} disabled={currentPage === totalPages}>
+            <IoChevronForwardSharp />
+          </Button>
+        </HStack>
       ) : null}
     </Box>
   );

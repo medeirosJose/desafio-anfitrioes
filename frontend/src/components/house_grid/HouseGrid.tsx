@@ -24,6 +24,7 @@ const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
         sm: 8,
         md: 16,
       }}
+      minHeight='100vh'
     >
       <Grid
         templateColumns={{
@@ -54,7 +55,7 @@ const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
                 localizacao={house.localizacao}
               />
             ))
-          : 'Nenhuma acomodação encontrada.'}
+          : 'Nenhuma acomodação encontrada. Favorite uma casa para vê-la aqui!'}
       </Grid>
     </Box>
   );

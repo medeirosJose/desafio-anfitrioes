@@ -8,13 +8,17 @@ import HouseDetail from './pages/HouseDetail';
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/liked' element={<Liked />} />
-        <Route path='/house/:id' element={<HouseDetail />} />
-      </Routes>
-      <Footer />
+      <div id='root'>
+        <Header />
+        <div className='main-content'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/liked' element={<Liked />} />
+            <Route path='/house/:id' element={<HouseDetail />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };

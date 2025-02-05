@@ -5,6 +5,16 @@
   text-align: center;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1; /* Faz o conteúdo expandir e empurrar o footer para baixo */
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

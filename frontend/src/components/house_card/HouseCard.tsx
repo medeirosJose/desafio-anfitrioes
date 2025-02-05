@@ -1,12 +1,4 @@
-import {
-  Button,
-  Card,
-  Image,
-  Stack,
-  Text,
-  Box,
-  IconButton,
-} from '@chakra-ui/react';
+import { Card, Image, Stack, Text, Box, IconButton } from '@chakra-ui/react';
 import { IoHeart } from 'react-icons/io5';
 import { IoHeartOutline } from 'react-icons/io5';
 import React, { useState } from 'react';
@@ -43,8 +35,17 @@ const HouseCard: React.FC<HouseCardProps> = ({
   };
 
   return (
-    <Card.Root width='100%' overflow='hidden' borderRadius='lg'>
-      <Box position='relative' height='200px'>
+    <Card.Root
+      width='100%'
+      overflow='hidden'
+      borderRadius='lg'
+      onClick={() => navigate(`/house/${id}`)}
+      _hover={{
+        cursor: 'pointer',
+        boxShadow: '0 0 8px rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      <Box position='relative' height='20rem'>
         <Image
           src={imagem}
           alt={nome}
@@ -81,16 +82,6 @@ const HouseCard: React.FC<HouseCardProps> = ({
           </Text>
         </Stack>
       </Card.Body>
-      <Card.Footer justifyContent='flex-end'>
-        <Button
-          variant='outline'
-          size='sm'
-          fontFamily={'heading'}
-          onClick={() => navigate(`/house/${id}`)}
-        >
-          Ver mais
-        </Button>
-      </Card.Footer>
     </Card.Root>
   );
 };

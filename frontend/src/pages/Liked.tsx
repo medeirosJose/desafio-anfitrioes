@@ -21,7 +21,6 @@ const Liked = () => {
         const data: House[] = await response.json();
 
         // filtra apenas as casas favorited no localStorage
-        // melhor fazer assim do que salvar os dados da casa no localStorage, visto que pode sofrer alteracoes
         const likedHouses = data.filter(
           (house) => localStorage.getItem(`favorited_${house.id}`) === 'true'
         );

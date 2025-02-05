@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import HouseGrid from '@/components/house_grid/HouseGrid';
 import EmptyState from '@/components/empty_state/EmptyState';
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text, Spinner } from '@chakra-ui/react';
 
 interface House {
   id: number;
@@ -40,7 +40,16 @@ const Liked = () => {
 
   return (
     <>
-      {houses.length === 0 ? (
+      {isLoading ? (
+        <Box
+          display='flex'
+          justifyContent='center'
+          alignItems='center'
+          minHeight='100vh'
+        >
+          <Spinner size='xl' />
+        </Box>
+      ) : houses.length === 0 ? (
         <EmptyState
           title='Você ainda não favoritou nenhuma acomodação.'
           subtitle='Descubra lugares incríveis e salve seus favoritos para acessá-los mais tarde!'

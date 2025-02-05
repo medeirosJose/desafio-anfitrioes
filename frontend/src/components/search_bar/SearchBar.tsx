@@ -1,7 +1,7 @@
 import { Box, Input, HStack, List } from '@chakra-ui/react';
 import { InputGroup } from '@/components/ui/input-group';
 import { LuSearch } from 'react-icons/lu';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface SearchBarProps {
   onSearch: (cidade: string) => void;
@@ -11,6 +11,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [cidade, setCidade] = useState('');
   const [complete, setComplete] = useState<string[]>([]);
   const [cidades, setCidades] = useState<string[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const fetchCidades = async () => {
@@ -28,7 +30,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setCidade(value);
-    onSearch(value);
+    setSelectedIndex(null);
 
     if (value) {
       const filtro = cidades.filter((cidade) =>
@@ -44,6 +46,28 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     setCidade(cidadeSelecionada);
     setComplete([]);
     onSearch(cidadeSelecionada);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'ArrowDown') {
+      if (selectedIndex === null || selectedIndex === complete.length - 1) {
+        setSelectedIndex(0);
+      } else {
+        setSelectedIndex((prevIndex) => (prevIndex ?? 0) + 1);
+      }
+    } else if (event.key === 'ArrowUp') {
+      if (selectedIndex === 0 || selectedIndex === null) {
+        setSelectedIndex(complete.length - 1);
+      } else {
+        setSelectedIndex((prevIndex) => (prevIndex ?? 0) - 1);
+      }
+    } else if (event.key === 'Enter') {
+      if (complete.length === 1) {
+        selectCidade(complete[0]);
+      } else if (selectedIndex !== null) {
+        selectCidade(complete[selectedIndex]);
+      }
+    }
   };
 
   return (
@@ -71,6 +95,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         >
           <>
             <Input
+              ref={inputRef}
               value={cidade}
               onChange={handleSearch}
               ps='1.75em'
@@ -84,6 +109,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                 borderColor: 'gray.200',
                 boxShadow: '0 0 0 1px gray.200',
               }}
+              onKeyDown={handleKeyDown}
             />
           </>
         </InputGroup>
@@ -94,17 +120,18 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           zIndex='10'
           backgroundColor='white'
           boxShadow='md'
-          borderRadius='md'
           width='50%'
           mt={1}
         >
-          {complete.map((cidade) => (
+          {complete.map((cidade, index) => (
             <List.Item
+              _marker={{ color: 'transparent' }}
               key={cidade}
               p={2}
               cursor='pointer'
-              _hover={{ backgroundColor: 'gray.100' }}
+              _hover={{ backgroundColor: 'gray.200' }}
               onClick={() => selectCidade(cidade)}
+              backgroundColor={selectedIndex === index ? 'gray.200' : 'white'}
             >
               {cidade}
             </List.Item>

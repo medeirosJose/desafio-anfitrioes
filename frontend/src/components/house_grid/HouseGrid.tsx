@@ -45,10 +45,12 @@ const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
   const scrollToHouses = () => {
     const element = document.getElementById('search-bar');
     if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 40,
-        behavior: 'smooth',
-      });
+      setTimeout(() => {
+        window.scrollTo({
+          top: element.offsetTop - 40,
+          behavior: 'smooth',
+        });
+      }, 100);
     }
   };
 

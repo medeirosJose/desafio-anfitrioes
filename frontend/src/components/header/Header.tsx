@@ -6,6 +6,7 @@ import {
   Image,
   IconButton,
   useBreakpointValue,
+  Link,
 } from '@chakra-ui/react';
 import {
   DrawerRoot,
@@ -35,7 +36,9 @@ const Header = () => {
       boxShadow='0 2px 10px rgba(0, 0, 0, 0.1)'
     >
       <Flex align='center' justify='space-between'>
-        <Image src={logo} alt='Logo' height={{ base: 8, sm: 12 }} />
+        <Link href='/'>
+          <Image src={logo} alt='Logo' height={{ base: 8, sm: 12 }} />
+        </Link>
 
         {isMobile ? (
           <DrawerRoot open={open} onOpenChange={(e) => setOpen(e.open)}>

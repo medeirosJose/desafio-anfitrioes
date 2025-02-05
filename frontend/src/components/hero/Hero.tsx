@@ -19,8 +19,6 @@ const Hero = () => {
             objectFit='cover'
             width='100%'
             height={{ base: '250px', md: '400px' }}
-            transition='transform 0.3s ease-in-out'
-            _hover={{ transform: 'scale(1.05)' }}
           />
         </Box>
 

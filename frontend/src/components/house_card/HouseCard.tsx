@@ -53,6 +53,8 @@ const HouseCard: React.FC<HouseCardProps> = ({
           objectFit='cover'
           width='100%'
           height='100%'
+          transition='transform 0.3s ease-in-out'
+          _hover={{ transform: 'scale(1.02)' }}
         />
         {/* Botão de favoritar */}
         <IconButton

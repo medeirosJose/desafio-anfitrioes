@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -26,7 +26,26 @@ import { IoMenu } from 'react-icons/io5';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
     <Box
@@ -34,6 +53,12 @@ const Header = () => {
       px={{ base: 4, sm: 16 }}
       py={4}
       boxShadow='0 2px 10px rgba(0, 0, 0, 0.1)'
+      position='sticky'
+      left={0}
+      right={0}
+      zIndex={10}
+      transition='top 0.3s ease'
+      top={showHeader ? 0 : '-100px'}
     >
       <Flex align='center' justify='space-between'>
         <Link href='/'>

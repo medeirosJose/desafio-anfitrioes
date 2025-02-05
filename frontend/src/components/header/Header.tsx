@@ -79,15 +79,15 @@ const Header = () => {
           </DrawerRoot>
         ) : (
           <>
-            <Flex align='center' gap={4}>
+            <Flex align='center' gap={4} alignItems='center'>
               <Button asChild variant='ghost'>
                 <a href='/'>Acomodações</a>
               </Button>
               <Button asChild variant='ghost'>
                 <a href='/liked'>Salvos</a>
               </Button>
+              <Avatar name='José Eduardo' src={avatarImg} />
             </Flex>
-            <Avatar name='José Eduardo' src={avatarImg} />
           </>
         )}
       </Flex>

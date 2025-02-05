@@ -25,6 +25,7 @@ const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
         sm: 8,
         md: 16,
       }}
+      mb={'4rem'}
       display='flex'
       flexDirection='column'
       alignItems='center'

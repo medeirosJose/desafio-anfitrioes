@@ -26,7 +26,8 @@ const HouseCard: React.FC<HouseCardProps> = ({
   const [favorited, setFavorited] = useState<boolean>(isFavorited);
 
   // Função para alternar o estado de favoritado
-  const toggleFavorite = () => {
+  const toggleFavorite = (e: React.MouseEvent) => {
+    e.stopPropagation(); // impede que o cique no ícone de favoritar tambem clique no card
     setFavorited((prev) => {
       const newFavorited = !prev;
       localStorage.setItem(`favorited_${id}`, newFavorited.toString());

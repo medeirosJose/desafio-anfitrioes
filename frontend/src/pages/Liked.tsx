@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import HouseGrid from '@/components/house_grid/HouseGrid';
 import EmptyState from '@/components/empty_state/EmptyState';
+import { Box, Heading, Text } from '@chakra-ui/react';
 
 interface House {
   id: number;
@@ -48,7 +49,22 @@ const Liked = () => {
           buttonLink='/'
         />
       ) : (
-        <HouseGrid houses={houses} isLoading={isLoading} />
+        <>
+          <Box
+            pt={4}
+            px={{ base: 4, sm: 8, md: 16 }}
+            width='full'
+            textAlign='left'
+          >
+            <Heading as='h1' size='xl' fontWeight='bold' color='secondary.400'>
+              Acomodações Favoritas
+            </Heading>
+            <Text fontSize='sm' color='gray.600' mt={2}>
+              Aqui estão as casas que você marcou como favoritas!
+            </Text>
+          </Box>
+          <HouseGrid houses={houses} isLoading={isLoading} />
+        </>
       )}
     </>
   );

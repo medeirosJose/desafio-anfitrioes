@@ -15,7 +15,7 @@ def read_root():
 def read_acomodacoes(session: Session = Depends(get_session), cidade: Optional[str] = Query(None)):
     query = select(Acomodacao)
     if cidade:
-        query = query.where(Acomodacao.localizacao.like(f"%{cidade}%"))
+        query = query.where(Acomodacao.location.like(f"%{cidade}%"))
     return session.exec(query).all()
 
 @router.get("/acomodacoes/{id}")
@@ -28,5 +28,5 @@ def read_acomodacao(id: int, session: Session = Depends(get_session)):
 # rota auxiliar para retornar todas as cidades disponíveis e usar no autocomplete do front
 @router.get("/cidades/", tags=["Auxiliares"], summary="Retorna todas as cidades disponníveis")
 def read_cidades(session: Session = Depends(get_session)) -> list[str]:
-    cidades = session.exec(select(Acomodacao.localizacao)).all()
+    cidades = session.exec(select(Acomodacao.location)).all()
     return list(set(cidades)) 

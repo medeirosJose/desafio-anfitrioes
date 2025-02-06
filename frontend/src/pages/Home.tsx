@@ -29,7 +29,6 @@ const Home = () => {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Erro ao buscar dados');
         const data: House[] = await response.json();
-        console.log(data);
         setHouses(data);
       } catch (error) {
         console.error('Erro ao buscar casas:', error);

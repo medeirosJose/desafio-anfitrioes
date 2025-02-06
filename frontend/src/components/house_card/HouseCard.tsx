@@ -4,23 +4,33 @@ import { IoHeartOutline } from 'react-icons/io5';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Propriedades do componente de card de casa
+ * @property {number} id - ID da casa
+ * @property {string} name - Nome da casa
+ * @property {string} image - URL da imagem da casa
+ * @property {number} price_night - Preço da casa por noite
+ * @property {string} location - Localização da casa
+ *
+ * @returns {ReactNode} Componente de card de casa
+ */
+
 interface HouseCardProps {
   id: number;
-  nome: string;
-  imagem: string;
-  preco_noite: number;
-  localizacao: string;
+  name: string;
+  image: string;
+  price_night: number;
+  location: string;
 }
 
 const HouseCard: React.FC<HouseCardProps> = ({
   id,
-  nome,
-  imagem,
-  preco_noite,
-  localizacao,
+  name,
+  image,
+  price_night,
+  location,
 }) => {
   const navigate = useNavigate();
-
   // Verifica no localStorage se a casa foi favoritada
   const isFavorited = localStorage.getItem(`favorited_${id}`) === 'true';
   const [favorited, setFavorited] = useState<boolean>(isFavorited);
@@ -48,8 +58,8 @@ const HouseCard: React.FC<HouseCardProps> = ({
     >
       <Box position='relative' height='20rem'>
         <Image
-          src={imagem}
-          alt={nome}
+          src={image}
+          alt={name}
           objectFit='cover'
           width='100%'
           height='100%'
@@ -75,13 +85,13 @@ const HouseCard: React.FC<HouseCardProps> = ({
       <Card.Body p='4' fontFamily={'body'}>
         <Stack>
           <Text fontSize='sm' color='gray.600'>
-            {localizacao}
+            {location}
           </Text>
           <Text fontWeight='semibold' fontSize='lg'>
-            {nome}
+            {name}
           </Text>
           <Text fontWeight='bold' color='secondary.400' fontFamily={'heading'}>
-            R$ {preco_noite.toFixed(2)} / noite
+            R$ {price_night.toFixed(2)} / noite
           </Text>
         </Stack>
       </Card.Body>

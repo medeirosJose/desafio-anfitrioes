@@ -1,6 +1,20 @@
 import { Box, Image, Text, Button } from '@chakra-ui/react';
 import emptyImage from '@/assets/empty.svg';
 
+/**
+ * Componente de estado vazio
+ *
+ * @param {string} title - Título do estado vazio
+ * @param {string} subtitle - Subtítulo do estado vazio
+ * @param {boolean} showButton - Mostrar botão
+ * @param {string} buttonText - Texto do botão
+ * @param {string} buttonLink - Link do botão
+ * @param {string} minHeight - Altura mínima do container
+ *
+ * @returns {ReactNode} Componente de estado vazio
+ *
+ */
+
 interface EmptyStateProps {
   title: string;
   subtitle: string;

@@ -24,6 +24,11 @@ import avatarImg from '../../assets/avatar.jpg';
 import houseArt from '../../assets/house.svg';
 import { IoMenu } from 'react-icons/io5';
 
+/**
+ * Componente de cabeçalho
+ * @returns {ReactNode} Header
+ */
+
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);

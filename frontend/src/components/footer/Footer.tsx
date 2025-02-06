@@ -2,6 +2,11 @@ import { Box, Text, Stack, Highlight } from '@chakra-ui/react';
 import { Link } from '@chakra-ui/react';
 import { LuExternalLink } from 'react-icons/lu';
 
+/**
+ * Componente de rodapé
+ * @returns {ReactNode} Footer
+ */
+
 const Footer = () => {
   return (
     <Box

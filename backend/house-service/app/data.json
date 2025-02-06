@@ -1,142 +1,142 @@
 [
   {
     "id": 1,
-    "nome": "Apartamento Beira-Mar",
-    "imagem": "https://picsum.photos/id/20/800",
-    "preco_noite": 350,
-    "localizacao": "Florianópolis, SC"
+    "name": "Apartamento Beira-Mar",
+    "image": "https://picsum.photos/id/20/800",
+    "price_night": 350,
+    "location": "Florianópolis, SC"
   },
   {
     "id": 2,
-    "nome": "Casa de Praia",
-    "imagem": "https://picsum.photos/id/22/800",
-    "preco_noite": 450,
-    "localizacao": "Florianópolis, SC"
+    "name": "Casa de Praia",
+    "image": "https://picsum.photos/id/22/800",
+    "price_night": 450,
+    "location": "Florianópolis, SC"
   },
   {
     "id": 3,
-    "nome": "Casa de Campo",
-    "imagem": "https://picsum.photos/id/24/800",
-    "preco_noite": 550,
-    "localizacao": "São José, SC"
+    "name": "Casa de Campo",
+    "image": "https://picsum.photos/id/24/800",
+    "price_night": 550,
+    "location": "São José, SC"
   },
   {
     "id": 4,
-    "nome": "Apartamento Centro",
-    "imagem": "https://picsum.photos/id/26/800",
-    "preco_noite": 250,
-    "localizacao": "São José, SC"
+    "name": "Apartamento Centro",
+    "image": "https://picsum.photos/id/26/800",
+    "price_night": 250,
+    "location": "São José, SC"
   },
   {
     "id": 5,
-    "nome": "Casa de Praia",
-    "imagem": "https://picsum.photos/id/28/800",
-    "preco_noite": 450,
-    "localizacao": "Florianópolis, SC"
+    "name": "Casa de Praia",
+    "image": "https://picsum.photos/id/28/800",
+    "price_night": 450,
+    "location": "Florianópolis, SC"
   },
   {
     "id": 6,
-    "nome": "Chalé na Montanha",
-    "imagem": "https://picsum.photos/id/30/800",
-    "preco_noite": 600,
-    "localizacao": "Gramado, RS"
+    "name": "Chalé na Montanha",
+    "image": "https://picsum.photos/id/30/800",
+    "price_night": 600,
+    "location": "Gramado, RS"
   },
   {
     "id": 7,
-    "nome": "Apartamento com Vista para o Mar",
-    "imagem": "https://picsum.photos/id/32/800",
-    "preco_noite": 800,
-    "localizacao": "Rio de Janeiro, RJ"
+    "name": "Apartamento com Vista para o Mar",
+    "image": "https://picsum.photos/id/32/800",
+    "price_night": 800,
+    "location": "Rio de Janeiro, RJ"
   },
   {
     "id": 8,
-    "nome": "Casa Moderna",
-    "imagem": "https://picsum.photos/id/34/800",
-    "preco_noite": 500,
-    "localizacao": "Florianópolis, SC"
+    "name": "Casa Moderna",
+    "image": "https://picsum.photos/id/34/800",
+    "price_night": 500,
+    "location": "Florianópolis, SC"
   },
   {
     "id": 9,
-    "nome": "Loft no Centro Histórico",
-    "imagem": "https://picsum.photos/id/36/800",
-    "preco_noite": 300,
-    "localizacao": "Rio de Janeiro, RJ"
+    "name": "Loft no Centro Histórico",
+    "image": "https://picsum.photos/id/36/800",
+    "price_night": 300,
+    "location": "Rio de Janeiro, RJ"
   },
   {
     "id": 10,
-    "nome": "Casa na Lagoa",
-    "imagem": "https://picsum.photos/id/38/800",
-    "preco_noite": 700,
-    "localizacao": "Florianópolis, SC"
+    "name": "Casa na Lagoa",
+    "image": "https://picsum.photos/id/38/800",
+    "price_night": 700,
+    "location": "Florianópolis, SC"
   },
   {
     "id": 11,
-    "nome": "Apartamento na Praia de Copacabana",
-    "imagem": "https://picsum.photos/id/40/800",
-    "preco_noite": 800,
-    "localizacao": "Rio de Janeiro, RJ"
+    "name": "Apartamento na Praia de Copacabana",
+    "image": "https://picsum.photos/id/40/800",
+    "price_night": 800,
+    "location": "Rio de Janeiro, RJ"
   },
   {
     "id": 12,
-    "nome": "Casa Rústica",
-    "imagem": "https://picsum.photos/id/42/800",
-    "preco_noite": 350,
-    "localizacao": "São José, SC"
+    "name": "Casa Rústica",
+    "image": "https://picsum.photos/id/42/800",
+    "price_night": 350,
+    "location": "São José, SC"
   },
   {
     "id": 13,
-    "nome": "Apartamento com Vista para o Cristo",
-    "imagem": "https://picsum.photos/id/44/800",
-    "preco_noite": 900,
-    "localizacao": "Rio de Janeiro, RJ"
+    "name": "Apartamento com Vista para o Cristo",
+    "image": "https://picsum.photos/id/44/800",
+    "price_night": 900,
+    "location": "Rio de Janeiro, RJ"
   },
   {
     "id": 14,
-    "nome": "Casa na Praia do Rosa",
-    "imagem": "https://picsum.photos/id/46/800",
-    "preco_noite": 650,
-    "localizacao": "Imbituba, SC"
+    "name": "Casa na Praia do Rosa",
+    "image": "https://picsum.photos/id/46/800",
+    "price_night": 650,
+    "location": "Imbituba, SC"
   },
   {
     "id": 15,
-    "nome": "Apartamento no Leblon",
-    "imagem": "https://picsum.photos/id/48/800",
-    "preco_noite": 1000,
-    "localizacao": "Rio de Janeiro, RJ"
+    "name": "Apartamento no Leblon",
+    "image": "https://picsum.photos/id/48/800",
+    "price_night": 1000,
+    "location": "Rio de Janeiro, RJ"
   },
   {
     "id": 16,
-    "nome": "Chalé na Serra",
-    "imagem": "https://picsum.photos/id/50/800",
-    "preco_noite": 550,
-    "localizacao": "São Joaquim, SC"
+    "name": "Chalé na Serra",
+    "image": "https://picsum.photos/id/50/800",
+    "price_night": 550,
+    "location": "São Joaquim, SC"
   },
   {
     "id": 17,
-    "nome": "Casa na Praia Mole",
-    "imagem": "https://picsum.photos/id/52/800",
-    "preco_noite": 480,
-    "localizacao": "Florianópolis, SC"
+    "name": "Casa na Praia Mole",
+    "image": "https://picsum.photos/id/52/800",
+    "price_night": 480,
+    "location": "Florianópolis, SC"
   },
   {
     "id": 18,
-    "nome": "Apartamento em Ipanema",
-    "imagem": "https://picsum.photos/id/54/800",
-    "preco_noite": 950,
-    "localizacao": "Rio de Janeiro, RJ"
+    "name": "Apartamento em Ipanema",
+    "image": "https://picsum.photos/id/54/800",
+    "price_night": 950,
+    "location": "Rio de Janeiro, RJ"
   },
   {
     "id": 19,
-    "nome": "Casa de Campo com Piscina",
-    "imagem": "https://picsum.photos/id/56/800",
-    "preco_noite": 750,
-    "localizacao": "São José, SC"
+    "name": "Casa de Campo com Piscina",
+    "image": "https://picsum.photos/id/56/800",
+    "price_night": 750,
+    "location": "São José, SC"
   },
   {
     "id": 20,
-    "nome": "Apartamento na Barra da Tijuca",
-    "imagem": "https://picsum.photos/id/58/800",
-    "preco_noite": 850,
-    "localizacao": "Rio de Janeiro, RJ"
+    "name": "Apartamento na Barra da Tijuca",
+    "image": "https://picsum.photos/id/58/800",
+    "price_night": 850,
+    "location": "Rio de Janeiro, RJ"
   }
 ]

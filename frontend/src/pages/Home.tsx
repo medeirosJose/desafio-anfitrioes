@@ -3,13 +3,12 @@ import HouseGrid from '@/components/house_grid/HouseGrid';
 import SearchBar from '@/components/search_bar/SearchBar';
 import Hero from '@/components/hero/Hero';
 
-interface House {
-  id: number;
-  nome: string;
-  imagem: string;
-  preco_noite: number;
-  localizacao: string;
-}
+import { House } from '../../types/house';
+
+/**
+ * Página inicial
+ * @returns {ReactNode} Página inicial
+ */
 
 const Home = () => {
   const [houses, setHouses] = useState<House[]>([]);
@@ -30,6 +29,7 @@ const Home = () => {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Erro ao buscar dados');
         const data: House[] = await response.json();
+        console.log(data);
         setHouses(data);
       } catch (error) {
         console.error('Erro ao buscar casas:', error);

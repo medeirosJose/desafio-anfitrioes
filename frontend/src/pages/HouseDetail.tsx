@@ -15,14 +15,14 @@ import { IoHeart, IoHeartOutline, IoHome } from 'react-icons/io5';
 import { Toaster, toaster } from '@/components/ui/toaster';
 import { BreadcrumbLink, BreadcrumbRoot } from '@/components/ui/breadcrumb';
 
-interface House {
-  id: number;
-  nome: string;
-  imagem: string;
-  preco_noite: number;
-  localizacao: string;
-}
+import { House } from '../../types/house';
 
+/**
+ * Página de detalhes da acomodação
+ * @property {string} id - ID da acomodação
+ *
+ * @returns {ReactNode} Detalhes da acomodação
+ */
 const HouseDetail = () => {
   const { id } = useParams();
   const [house, setHouse] = useState<House | null>(null);
@@ -79,12 +79,12 @@ const HouseDetail = () => {
           <IoHome />
           Acomodações
         </BreadcrumbLink>
-        <BreadcrumbLink href={`/house/${id}`}>{house.nome}</BreadcrumbLink>
+        <BreadcrumbLink href={`/house/${id}`}>{house.name}</BreadcrumbLink>
       </BreadcrumbRoot>
       <Box position='relative' flex={{ md: 1 }}>
         <Image
-          src={house.imagem}
-          alt={house.nome}
+          src={house.image}
+          alt={house.name}
           borderRadius='lg'
           width='100%'
           height={{ base: 'auto', md: '400px' }}
@@ -121,7 +121,7 @@ const HouseDetail = () => {
           display={{ base: 'none', md: 'flex' }}
         >
           <Text fontSize='3xl' fontWeight='bold' color='gray.800'>
-            {house.nome}
+            {house.name}
           </Text>
           <Button
             variant='ghost'
@@ -143,7 +143,7 @@ const HouseDetail = () => {
           color='gray.800'
           display={{ base: 'block', md: 'none' }}
         >
-          {house.nome}
+          {house.name}
         </Text>
 
         <Flex
@@ -154,7 +154,7 @@ const HouseDetail = () => {
         >
           <VStack align='start' flex={1}>
             <Text fontSize='lg' color='gray.700' fontFamily={'body'}>
-              {house.localizacao}
+              {house.location}
             </Text>
 
             <Text
@@ -178,7 +178,7 @@ const HouseDetail = () => {
               color='secondary.400'
               fontFamily={'heading'}
             >
-              R$ {house.preco_noite.toFixed(2)} / noite
+              R$ {house.price_night.toFixed(2)} / noite
             </Text>
             <Button
               colorScheme='teal'

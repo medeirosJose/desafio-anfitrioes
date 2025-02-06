@@ -3,13 +3,12 @@ import HouseGrid from '@/components/house_grid/HouseGrid';
 import EmptyState from '@/components/empty_state/EmptyState';
 import { Box, Heading, Text, Spinner } from '@chakra-ui/react';
 
-interface House {
-  id: number;
-  nome: string;
-  imagem: string;
-  preco_noite: number;
-  localizacao: string;
-}
+import { House } from '../../types/house';
+
+/**
+ * Página de acomodações favoritas
+ * @returns {ReactNode} Página de acomodações favoritas
+ */
 
 const Liked = () => {
   const [houses, setHouses] = useState<House[]>([]);

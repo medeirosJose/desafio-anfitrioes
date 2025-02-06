@@ -3,6 +3,15 @@ import { InputGroup } from '@/components/ui/input-group';
 import { LuSearch } from 'react-icons/lu';
 import { useState, useEffect, useRef } from 'react';
 
+/**
+ * Componente de barra de pesquisa
+ *
+ * @property {Function} onSearch - Função de busca
+ * @property {string} cidade - Cidade a ser buscada
+ *
+ * @returns {ReactNode} Barra de pesquisa
+ */
+
 interface SearchBarProps {
   onSearch: (cidade: string) => void;
 }

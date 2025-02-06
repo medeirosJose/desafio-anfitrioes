@@ -1,6 +1,10 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import heroImage from '../../assets/searchHouse.svg';
 
+/**
+ * Componente de hero
+ * @returns {ReactNode} Hero
+ */
 const Hero = () => {
   return (
     <Box bg='gray.200' py={16} px={6}>

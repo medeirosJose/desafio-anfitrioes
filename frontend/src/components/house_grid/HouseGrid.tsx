@@ -5,13 +5,15 @@ import EmptyState from '../empty_state/EmptyState';
 import { IoChevronForwardSharp } from 'react-icons/io5';
 import { IoChevronBackSharp } from 'react-icons/io5';
 
-interface House {
-  id: number;
-  nome: string;
-  imagem: string;
-  preco_noite: number;
-  localizacao: string;
-}
+import { House } from '../../../types/house';
+
+/**
+ * Componente de grid de casas
+ * @property {House[]} houses - Lista de elementos do tipo casa
+ * @property {boolean} isLoading - Indica se a lista de casas está sendo carregada
+ *
+ * @returns {ReactNode} Grid de casas
+ */
 
 interface HouseGridProps {
   houses: House[];
@@ -87,10 +89,10 @@ const HouseGrid: React.FC<HouseGridProps> = ({ houses, isLoading }) => {
             <HouseCard
               key={house.id}
               id={house.id}
-              nome={house.nome}
-              imagem={house.imagem}
-              preco_noite={house.preco_noite}
-              localizacao={house.localizacao}
+              name={house.name}
+              image={house.image}
+              price_night={house.price_night}
+              location={house.location}
             />
           ))}
         </Grid>
